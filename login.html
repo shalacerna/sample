@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="css\bootstrap.css" />
+    <link rel="stylesheet" href="css1.css" />
+    <style>
+        .invalid{
+            color : red;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container col-md-6">
+        <div class="card ">
+                <div class="card-header text-center">
+                    LOGIN
+                </div>
+                <div class="card-body">
+                    <div class="form-group ">
+                        <label>USERNAME:</label>
+                        <input id="uname" class="form-control" type="text" placeholder="Username" required="required">
+                    </div>
+                    <div class="form-group ">
+                        <label>PASSWORD:</label>
+                        <input id="pword"class="form-control" type="password" placeholder="Password" required="required">
+                    </div>
+                    <div id="invalid" class="form-group invalid">
+                            <label>Invalid Username or Password</label>
+                            
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="footer-buttons">
+                        <div class="form-group text-center">
+                            <button onclick="cancel();" class="btn btn-secondary">Cancel</button>
+                            <button id="login" onclick="login();" class="btn btn-primary">Login</button>
+                            <a href="index.html" id="signup" class="button btn btn-light">Signup</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+        
+
+
+
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#invalid").hide();
+            });
+    function login(){
+        if ($("#uname").val() ==='admin' && $("#pword").val() ==='123456admin'){
+            window.location.href = "portfolio.html";
+        }else{
+            $("#invalid").show();
+        }
+    }
+    function cancel(){
+                $('#uname').val("");
+                $('#pword').val("");
+            }
+</script>
+    
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="css\bootstrap.css" />
+    <link rel="stylesheet" href="css1.css" />
+</head>
+
+<body>
+    <form class="col-md-6 offset-md-3" id="registerForm">
+        <div class="card">
+            <div class="card-header text-center">
+                REGISTER
+            </div>
+            <div class="card-body">
+                <div class="form-group ">
+                    <label>LAST NAME:</label>
+                    <input class="form-control" type="text" placeholder="Last Name" required="required">
+                </div>
+                <div class="form-group ">
+                    <label>FIRST NAME:</label>
+                    <input class="form-control" type="text" placeholder="First Name" required="required">
+                </div>
+                <div class="form-group ">
+                    <label>GENDER:</label>
+                    <div class="radio">
+                        <label><input type="radio" name="gender" required="required">   Male</label>
+                        <label><input type="radio" name="gender" required="required">   Female</label>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>EMAIL:</label>
+                    <input class="form-control" type="email" placeholder="@something.com" required="required">
+                </div>
+                <div class="form-group ">
+                    <label>USERNAME:</label>
+                    <input id="uname" class="form-control" type="text" placeholder="Username" required="required">
+                </div>
+                <div class="form-group ">
+                    <label>PASSWORD:</label>
+                    <input id="pword"class="form-control" type="password" placeholder="Password" required="required">
+                </div>
+                <div class="form-group ">
+                    <label>CONFIRM PASSWORD:</label>
+                    <input id="cpword"class="form-control" type="password" placeholder="Confirm Password" required="required">
+                </div>
+                <div class="form-group text-center">
+                    <label><input type="checkbox" required="required"/> I accept!</label>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="footer-buttons">
+                    <div class="form-group text-center">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Sign up</button>
+						<a class="right-a" href="login.html" id="signup" class="button btn btn-light">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script>
+$(function(){   
+	$('#registerForm').submit(function (e) {
+        var pw1=$("#pword").val();
+        var pw2=$("#cpword").val();
+		if(pw1 === pw2){
+			
+            alert("Your are successfully registered!");
+			window.open("login.html");
+			
+			}else{
+            
+			alert("Password does not match! Try Again");
+        
+		}
+		
+    });
+});
+	</script>
+
+</html>
